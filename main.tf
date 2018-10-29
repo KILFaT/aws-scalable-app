@@ -29,8 +29,7 @@ resource "aws_launch_configuration" "primary" {
   # curl https://omnitruck.chef.io/install.sh | sudo bash -s -- -P chefdk -c stable -v 2.5.3
   # mkdir chef-repo
   # cd chef-repo
-  # echo -e "package 'httpd'\nservice 'httpd' do\n   action [:enable, :start] \nend\nfile '/var/www/html/index.html' do\n   content '<html>   <body>     <h1>What is lifes greatest illusion?</h1>  <img src="https://s3.amazonaws.com/aws-scalable-app-static-files-bucket/Dbhand.png"></body> </html>' \nend" > webserver.rb
-  curl https://github.com/KILFaT/aws-scalable-app/blob/master/serv.py -O
+  curl https://raw.githubusercontent.com/KILFaT/aws-scalable-app/master/serv.py -O
   # sudo chef-client --local-mode webserver.rb
   python serv.py
   # python -m http.server 80

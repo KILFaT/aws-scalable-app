@@ -11,7 +11,7 @@ class myHandler(BaseHTTPRequestHandler):
         #Handler for the GET requests
         def do_GET(self):		
     		f = open('00000001.png', 'wb')
-    		f.write(requests.get("").content)
+    		f.write(requests.get("https://aws-scalable-app-static-files-bucket.s3.eu-central-1.amazonaws.com/Dbhand.png").content)
     		f.close()		
                 self.send_response(200)
                 self.send_header('Content-type','text/html')
