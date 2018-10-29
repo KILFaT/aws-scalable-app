@@ -65,15 +65,7 @@ variable "amis" {
   eu-central-1 = "ami-030aae8cba933aede"
   }
 }
-#Getting latest OS (Windows Server 2012 R2 in this case)
-data "aws_ami" "amazon_freetier" {
-	most_recent = true
-	owners      = ["amazon"]
-	filter {
-	name   = "name"
-	values = ["Windows_Server-2012-R2_RTM-English-64Bit-Base-*"]
-	}
-}
+
 variable "key_name" {
   description = "Key name for SSHing into EC2"
   default = "test-key-pair-1"
